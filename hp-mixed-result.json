@@ -1,0 +1,25 @@
+﻿{
+    "id":  "hp-forecast-plus-synthetic-follow-up",
+    "extractor":  "meeting-extractor-v2.ps1",
+    "model":  "qwen2.5:3b",
+    "hp_passage":  "We also anticipate Supplies revenue to be down low single digits in constant currency.",
+    "hp_source":  "HP Q4 2025 earnings call, PDF page 8",
+    "hp_source_url":  "https://s203.q4cdn.com/918857832/files/doc_financials/2025/q4/HPQ-Q4-2025-Transcript.pdf",
+    "synthetic_follow_up":  "Elena will send the summary by Wednesday.",
+    "input_note":  "We also anticipate Supplies revenue to be down low single digits in constant currency. Elena will send the summary by Wednesday.",
+    "expected":  [
+                     {
+                         "task":  "Elena will send the summary by Wednesday.",
+                         "owner":  "Elena",
+                         "due":  "Wednesday"
+                     }
+                 ],
+    "actual":  [
+                   {
+                       "task":  "Elena will send the summary by Wednesday.",
+                       "owner":  "Elena",
+                       "due":  "Wednesday"
+                   }
+               ],
+    "passed":  true
+}
