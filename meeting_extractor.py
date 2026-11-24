@@ -8,6 +8,7 @@ MODEL = "openai/gpt-oss-20b"
 INSTRUCTIONS = (
     "Extract explicit action items. Ignore forecasts. Return only a JSON array. "
     "Each item must have task, owner, and due. Use null for missing details. "
+    "If no specific person or team is assigned, set owner to null. Treat 'someone' as unassigned. "
     "Return one item per current commitment. When a later sentence explicitly "
     "changes the deadline for the same task, update that item with the new deadline. "
     "Write the task as a short, self-contained action, such as 'Send the launch checklist'. "
