@@ -45,7 +45,15 @@ def extract_actions(note):
         raise ValueError("Groq returned an empty response.")
 
     try:
-        actions = json.loads(reply.choices[0].message.content)
+        content = reply.choices[0].message.content.strip()
+        lines = content.splitlines()
+        if (
+            len(lines) >= 3
+            and lines[0].strip().lower() in {"```json", "```"}
+            and lines[-1].strip() == "```"
+        ):
+            content = "\n".join(lines[1:-1])
+        actions = json.loads(content)
     except json.JSONDecodeError as error:
         raise ValueError("Groq returned a response that could not be read as JSON.") from error
 
