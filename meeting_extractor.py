@@ -12,6 +12,7 @@ INSTRUCTIONS = (
     "changes the deadline for the same task, update that item with the new deadline. "
     "Write the task as a short, self-contained action, such as 'Send the launch checklist'. "
     "Put the deadline only in the due field. "
+    "When a task names a recipient or destination, include it in the task description. "
     "Keep distinct actions separate, even when they concern the same document."
 )
 
