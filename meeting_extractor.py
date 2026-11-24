@@ -7,8 +7,12 @@ from groq import APIConnectionError, APIStatusError, Groq
 MODEL = "openai/gpt-oss-20b"
 INSTRUCTIONS = (
     "Extract explicit action items. Ignore forecasts. Return only a JSON array. "
-    "Each item must have task, owner, and due. Copy the task sentence exactly. "
-    "Use null for missing details."
+    "Each item must have task, owner, and due. Use null for missing details. "
+    "Return one item per current commitment. When a later sentence explicitly "
+    "changes the deadline for the same task, update that item with the new deadline. "
+    "Write the task as a short, self-contained action, such as 'Send the launch checklist'. "
+    "Put the deadline only in the due field. "
+    "Keep distinct actions separate, even when they concern the same document."
 )
 
 
